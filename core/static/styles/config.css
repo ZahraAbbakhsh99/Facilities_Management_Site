@@ -1,0 +1,51 @@
+/* FONT */
+@font-face {
+    font-family: 'nazanin';
+    src: url('Far_Nazanin/assets/Far_Nazanin.woff') format('woff');
+    font-style: normal;
+}
+
+/* VARIABLES */
+:root {
+    /* COLORS */
+    --primary-color: #009DE0;
+    --secondary-color: #0FB7FF;
+    --tertiary-color: #6BD3FF;
+    --white-color: #F5FCFF;
+    --black: #001016;
+    --red: #FF3333;
+    --warning-color: #E7B55F;
+    --green: #00D000;
+    --gray:#D3D3D3;
+    --background-color:#E6E7FF;
+
+        
+    /* FONTS */
+    /* size */
+    --large-title-size: 48px; 
+    --text-size: 36px;
+    --medium-title-size: 36px;
+    --body-size: 18px;
+    --small-title-size: 24px;
+    --small-title2-size: 20px;
+    
+    /* weight */
+    --bold: 700;
+    --regular: 400;
+}
+
+
+h1, h2, h3, h4, h5, h6, p{
+    color: var(--black);
+    margin: unset;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+

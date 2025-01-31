@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به مدیریت تاسیسات</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h1> ورود به سامانه</h1>
+        <form action="{% url 'facilities_login' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="شناسه تاسیسات" required>
+            <input type="password" name="password" placeholder="رمز عبور" required>
+            <button type="submit">ورود</button>
+        </form>
+        {% if messages %}
+        <div class="messages">
+            <ul>
+                {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

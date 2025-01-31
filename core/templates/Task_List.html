@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa-IR" dir="rtl">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="table page">
+    <meta name="robots" content="noindex">
+
+    <!-- styles links -->
+    <link rel="stylesheet" href="{%  static 'styles/config.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/history.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+
+    <title>اولویت بندی پیشنهادی</title>  
+    <style>
+        #current-date {
+            color: white;
+            font-size: 20px; 
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- header part starts -->
+    <header class="desktop-header">
+{#        {% static 'styles/img/logo.png' %}#}
+        <img class="logo" src="{{ facility.image.url }}" alt="logo">
+        <span id="current-date"></span>
+    </header>
+    <!-- header parts end -->
+
+    <!-- main content start -->
+    <section class="main-content">
+        <!-- history part starts -->
+        <div class="history-part-container">
+            <div class="history-title-container">
+                <h4 class="history-title"> اولویت بندی پیشنهادی </h4>
+            </div>
+            {%  if not tasks %}
+                <p> you haven't any tasks</p>
+            {%  else %}
+                <div class="table-container">
+                    <!-- table -->
+                    <table class="history">
+                        <!-- table head -->
+                        <thead>
+                            <tr>
+                                <th class="name table-header1"> {{ facility.organization }}_{{ facility.branch }}</th>
+                            </tr>
+                            <tr>
+                                <th class="table-header2 right-border-style-fixing">اولویت</th>
+                                <th class="table-header2">دسته بندی</th>
+                                <th class="table-header2">بخش درخواست کننده</th>
+                                <th class="table-header2">عنوان کار</th>
+                                <th class="table-header2">تخمین زمان</th>
+                                <th class="table-header2 left-border-style-fixing"> بیشتر</th>
+                            </tr>
+                        </thead>
+                        <!-- table content -->
+                        {% for task in tasks %}
+                        <tr>
+                            <td class="right-border-style-fixing">{{ forloop.counter }}</td>
+                            <td>{{ task.category.name }}</td>
+                            <td>{{ task.applicant.department }}</td>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.estimated_time }}</td>
+                            <td class="left-border-style-fixing"><a  href="#">جزئیات</a></td>
+                        </tr>
+                        {%  endfor %}
+                    </table>
+                </div>
+            {%  endif %}
+        </div>
+        <!-- history part ends -->
+
+    </section>
+    <!-- main content ends -->
+
+    <!-- Add Jalaali-js library -->
+    <script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.min.js"></script>
+    <script>
+        // Function to display Persian date
+        function showPersianDate() {
+            const today = new Date(); // Current date
+            const jalaali = window.jalaali.toJalaali(today.getFullYear(), today.getMonth() + 1, today.getDate()); // Convert to Jalaali
+            const monthNames = [
+                "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+                "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"
+            ];
+            const persianDate = `${jalaali.jd} ${monthNames[jalaali.jm - 1]}`; // Format date
+            document.getElementById("current-date").textContent = `تاریخ امروز: ${persianDate}`; // Display in header
+        }
+
+        // Call the function
+        showPersianDate();
+    </script>
+</body>
+</html>

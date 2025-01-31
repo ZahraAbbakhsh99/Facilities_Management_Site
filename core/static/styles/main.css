@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+    font-family: 'nazanin';
+}
+
+/* unvailable */
+.unavailable{
+    background-color: var(--gray) !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* hidden/visible */
+.hidden{
+    display: none !important;
+}
+
+
+/* button */
+button{
+    transition: 0.3s ease, color 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.01);
+}
+
+.main-content{
+    margin: 60px 36px;
+}
+
+.desktop-header {
+    height: 176px;
+    padding: 0 36px;
+    background-color: #2c3e50; /* رنگ سرمه‌ای */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #2c3e50; /* هم‌رنگ با پس‌زمینه */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.logo{
+    height: 98px;
+}
+
+.login-btns-container{
+    display: flex;
+    flex-direction: row;
+    gap: 42px;
+}
+
+.login-btn{
+    display: flex;
+    width: 184px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--white-color);
+    background-color: var(--tertiary-color);
+}
+
+.login-btn a{
+    font-size: var(--body-size);
+    font-weight: var(--regular);
+}
+
+/* footer styles */
+.footer{
+    padding: 32px 67px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 250px;
+}
+
+.footer a{
+    color: var(--white-color);
+    font-size: var(--small-title-size);
+    font-weight: var(--regular);
+}
+
+.footer-links{
+    justify-content: flex-start
+}
+
+.contact-us{
+    justify-content: center;
+}
+
+.premissions{
+    justify-content: flex-end;
+}
+
+.footer-links, .contact-way-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.contact-us-title{
+    margin-bottom: 15px;
+    color: var(--white-color);
+    font-size: var(--small-title-size);
+    font-weight: var(--regular);
+}
+
+.contact-way-container a img{
+    margin-right: 10px;
+}
+
+.contact-way-container a{
+    display: flex;
+    align-items: center;
+}
+
