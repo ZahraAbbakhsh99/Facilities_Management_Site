@@ -8,4 +8,4 @@ Requesters submit tickets, which are then prioritized in the facilities manageme
 In this implementation, only one feature has been developed: task prioritization using the Round Robin algorithm.
 
 Additionally, this code has been created as part of the E-Commerce course project.
-In collaboration with Nika Shahbik (nikashabeyk@gmail.com).
+In collaboration with Nika Shahbeyk (nikashabeyk@gmail.com).
